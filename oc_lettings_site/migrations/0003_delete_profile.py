@@ -9,9 +9,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        # migrations.DeleteModel(
-        #     name='Profile',
-        # ),
         migrations.SeparateDatabaseAndState(
             state_operations=[
                 migrations.DeleteModel(
