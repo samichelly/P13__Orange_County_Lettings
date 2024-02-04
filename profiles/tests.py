@@ -14,10 +14,10 @@ class ProfilesTest(TestCase):
 
     def test_profiles_index(self):
         response = self.client.get(reverse("profiles:index"))
-        assert response.status_code == 200
-        assert b"<title>Profiles</title>" in response.content
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, b"<title>Profiles</title>")
 
     def test_profile_detail(self):
         response = self.client.get(reverse("profiles:profile", args=["TestUser"]))
-        assert response.status_code == 200
-        assert b"<title>TestUser</title>" in response.content
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, b"<title>TestUser</title>")
