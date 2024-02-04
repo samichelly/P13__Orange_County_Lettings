@@ -20,10 +20,10 @@ class LettingsTest(TestCase):
 
     def test_lettings_index(self):
         response = self.client.get(reverse("lettings:index"))
-        assert response.status_code == 200
-        assert b"<title>Lettings</title>" in response.content
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, b"<title>Lettings</title>")
 
     def test_letting_detail(self):
         response = self.client.get(reverse("lettings:letting", args=[1]))
-        assert response.status_code == 200
-        assert b"<title>Test Domain Versailles</title>" in response.content
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, b"<title>Test Domain Versailles</title>")
