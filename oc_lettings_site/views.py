@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from sentry_sdk import capture_message
 
 
 def index(request):
@@ -25,6 +26,7 @@ def custom_404(request, exception):
     Returns:
     - Rendered response for the custom 404 error page.
     """
+    capture_message("Page not found!", level="error")
     return render(request, "404_error.html", status=404)
 
 
@@ -38,4 +40,5 @@ def custom_500(request):
     Returns:
     - Rendered response for the custom 500 error page.
     """
+    capture_message("Internal Server Error", level="error")
     return render(request, "500_error.html", status=500)

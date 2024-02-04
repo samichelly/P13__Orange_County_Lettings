@@ -1,5 +1,6 @@
 import os
 import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 from pathlib import Path
 
@@ -14,7 +15,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
@@ -76,7 +77,7 @@ DATABASES = {
     }
 }
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 # Password validation
@@ -127,9 +128,18 @@ sentry_sdk.init(
     dsn="https://6fe579278b0124ad6cd5b6f6027ebfa0@o4506610879954944.ingest.sentry.io/4506666483187712",
     # Set traces_sample_rate to 1.0 to capture 100%
     # of transactions for performance monitoring.
+    integrations=[
+        DjangoIntegration(
+            transaction_style="url",
+            middleware_spans=True,
+            signals_spans=False,
+            cache_spans=False,
+        ),
+    ],
     traces_sample_rate=1.0,
     # Set profiles_sample_rate to 1.0 to profile 100%
     # of sampled transactions.
     # We recommend adjusting this value in production.
     profiles_sample_rate=1.0,
+    # send_default_pii=True,
 )
