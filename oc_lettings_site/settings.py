@@ -2,7 +2,12 @@ import os
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 
+from decouple import config
+
 from pathlib import Path
+
+
+SENTRY_DSN = config('SENTRY_DSN', default='')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -125,7 +130,7 @@ STATICFILES_DIRS = [
 
 # Sentry init
 sentry_sdk.init(
-    dsn="https://6fe579278b0124ad6cd5b6f6027ebfa0@o4506610879954944.ingest.sentry.io/4506666483187712",
+    dsn=SENTRY_DSN,
     # Set traces_sample_rate to 1.0 to capture 100%
     # of transactions for performance monitoring.
     integrations=[
