@@ -7,7 +7,7 @@ from decouple import config
 from pathlib import Path
 
 
-SENTRY_DSN = config('SENTRY_DSN', default='')
+SENTRY_DSN = config("SENTRY_DSN", default="")
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -131,8 +131,6 @@ STATICFILES_DIRS = [
 # Sentry init
 sentry_sdk.init(
     dsn=SENTRY_DSN,
-    # Set traces_sample_rate to 1.0 to capture 100%
-    # of transactions for performance monitoring.
     integrations=[
         DjangoIntegration(
             transaction_style="url",
@@ -142,9 +140,6 @@ sentry_sdk.init(
         ),
     ],
     traces_sample_rate=1.0,
-    # Set profiles_sample_rate to 1.0 to profile 100%
-    # of sampled transactions.
-    # We recommend adjusting this value in production.
     profiles_sample_rate=1.0,
     # send_default_pii=True,
 )
