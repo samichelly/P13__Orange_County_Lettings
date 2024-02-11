@@ -16,7 +16,7 @@ jobs:
             # mkdir test_files
             python -m venv venv
             .\venv\Scripts\activate
-            # pip install -r requirements.txt
+            pip install -r requirements.txt
 
       - run:
           name: Run tests
