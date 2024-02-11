@@ -41,7 +41,6 @@ jobs:
             docker tag python-oc-lettings-fr-server:latest samichelly/python-oc-lettings-fr-server:latest
             docker push samichelly/python-oc-lettings-fr-server:latest
 
-            # samichelly/python-oc-lettings-fr-server:tagname
 
 
   Deployment:
