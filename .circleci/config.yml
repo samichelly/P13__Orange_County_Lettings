@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: python:3.11.5
 
-    working_directory: /app
+    # working_directory: /app
 
     steps:
       - checkout
@@ -15,7 +15,7 @@ jobs:
           command: 
             # mkdir test_files
             python -m venv venv
-            . venv/bin/activate
+            # . venv/bin/activate
             # pip install -r requirements.txt
 
       - run:
