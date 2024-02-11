@@ -11,14 +11,14 @@ jobs:
       - checkout
 
       - run:
-          name: Initialize venv / Install dependencies
-          command: |
+          name: Initialize venv
+          command:
             python -m venv venv
-            
-            # Activer l'environnement virtuel sur Windows
-            .\venv\Scripts\activate
-            
-            # Installer les dépendances à partir de requirements.txt
+           .\venv\Scripts\activate
+        
+      - run:
+          name: Install dependencies
+          command: |
             pip install -r requirements.txt
 
       - run:
