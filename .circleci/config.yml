@@ -13,7 +13,6 @@ jobs:
       - run:
           name: Initialize venv / Install dependencies
           command: |
-            # Créer un environnement virtuel
             python -m venv venv
             
             # Activer l'environnement virtuel sur Windows
