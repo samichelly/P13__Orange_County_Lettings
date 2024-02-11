@@ -15,7 +15,7 @@ jobs:
           command: 
             # mkdir test_files
             python -m venv venv
-            # . venv/bin/activate
+            . venv/bin/activate
             # pip install -r requirements.txt
 
       - run:
