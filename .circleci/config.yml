@@ -6,7 +6,6 @@ jobs:
       - image: python:3.11.5
 
     # working_directory: /app
-
     steps:
       - checkout
 
@@ -22,14 +21,58 @@ jobs:
             pip install -r requirements.txt
 
       - run:
+          name: Linting
+          command: flake8
+
+      - run:
           name: Run tests
           command: pytest
 
+  Containerize:
+    docker:
+      - image: docker:stable
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build Docker image
+          command: |
+            docker build -t python-oc-lettings-fr-server .
+            docker tag P13_Docker_Image:latest samichelly/python-oc-lettings-fr-server:latest
+            docker push samichelly/python-oc-lettings-fr-server:latest
+
+            # samichelly/python-oc-lettings-fr-server:tagname
+
+
+  Deployment:
+        docker:
+        - image: cimg/base:stable
+        steps:
+        - checkout
+        - run:
+            name: "Deploy"
+            command: curl -X GET https://api.render.com/deploy/srv-cn2lrr821fec73e4ado0?key=yl8O7hCN0dA
+
 workflows:
   version: 2
-  build_and_test:
+  build:
     jobs:
       - build
+      # - containerize:
+      #     requires:
+      #       - build
+      #     filters:
+      #       branches:
+      #         only:
+      #           - master
+      # - deploy:
+      #     requires:
+      #       - build
+      #       - containerize
+      #     filters:
+      #       branches:
+      #         only:
+      #           - master
 
     triggers:
       - schedule:
@@ -38,3 +81,6 @@ workflows:
             branches:
               only:
                 - master
+
+
+
