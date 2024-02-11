@@ -38,7 +38,7 @@ jobs:
           name: Build Docker image
           command: |
             docker build -t python-oc-lettings-fr-server .
-            docker tag P13_Docker_Image:latest samichelly/python-oc-lettings-fr-server:latest
+            docker tag python-oc-lettings-fr-server:latest samichelly/python-oc-lettings-fr-server:latest
             docker push samichelly/python-oc-lettings-fr-server:latest
 
             # samichelly/python-oc-lettings-fr-server:tagname
