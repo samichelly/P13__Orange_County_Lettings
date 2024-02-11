@@ -28,7 +28,7 @@ jobs:
           name: Run tests
           command: pytest
 
-  Containerize:
+  containerize:
     docker:
       - image: docker:stable
     steps:
@@ -58,9 +58,9 @@ workflows:
   build:
     jobs:
       - build
-      # - containerize:
-      #     requires:
-      #       - build
+      - containerize:
+          requires:
+            - build
       #     filters:
       #       branches:
       #         only:
