@@ -39,7 +39,7 @@ jobs:
           command: |
             docker build -t python-oc-lettings-fr-server .
             docker tag python-oc-lettings-fr-server:latest samichelly/python-oc-lettings-fr-server:latest
-            docker login -u $samichelly -p dckr_pat_ycrjM1Igqj73WdUVVagC1nOMMhw
+            docker login -u samichelly -p dckr_pat_ycrjM1Igqj73WdUVVagC1nOMMhw
             docker push samichelly/python-oc-lettings-fr-server:latest
 
 
