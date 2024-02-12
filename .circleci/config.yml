@@ -42,13 +42,13 @@ jobs:
             docker login -u $DOCKER_USER -p $DOCKER_TOKEN
             docker push $DOCKER_USER/python-oc-lettings-fr-server:latest
 
-  Deployment:
+  deployment:
         docker:
         - image: cimg/base:stable
         steps:
         - checkout
         - run:
-            name: "Deploy"
+            name: Deploy
             command: curl -X GET API_RENDER
 
 workflows:
@@ -63,10 +63,10 @@ workflows:
       #       branches:
       #         only:
       #           - master
-      # - deploy:
-      #     requires:
-      #       - build
-      #       - containerize
+      - deployment:
+          requires:
+            - build
+            - containerize
       #     filters:
       #       branches:
       #         only:
