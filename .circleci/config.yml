@@ -30,7 +30,7 @@ jobs:
 
       - run:
           name: Collect static files
-          command: python manage.py collectstatic --no-input
+          command: python manage.py collectstatic --staticfiles
 
   containerize:
     docker:
