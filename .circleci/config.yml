@@ -39,12 +39,8 @@ jobs:
           command: |
             docker build -t python-oc-lettings-fr-server .
             docker tag python-oc-lettings-fr-server:latest samichelly/python-oc-lettings-fr-server:latest
-            docker login -u samichelly -p $DOCKER_TOKEN
+            docker login -u $DOCKER_USER -p $DOCKER_TOKEN
             docker push samichelly/python-oc-lettings-fr-server:latest
-
-            # dckr_pat_ycrjM1Igqj73WdUVVagC1nOMMhw
-
-
 
   Deployment:
         docker:
