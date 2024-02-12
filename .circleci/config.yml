@@ -72,11 +72,11 @@ workflows:
       #         only:
       #           - master
 
-    triggers:
-      - schedule:
-          cron: "* * * * *"
-          filters:
-            branches:
-              only:
-                - master
+    # triggers:
+    #   - schedule:
+    #       cron: "* * * * *"
+    #       filters:
+    #         branches:
+    #           only:
+    #             - master
 
