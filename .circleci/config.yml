@@ -28,6 +28,10 @@ jobs:
           name: Run tests
           command: pytest
 
+      - run:
+          name: Collect static files
+          command: python manage.py collectstatic --no-input
+
   containerize:
     docker:
       - image: docker:stable
