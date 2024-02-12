@@ -49,7 +49,7 @@ jobs:
         - checkout
         - run:
             name: Deploy
-            command: curl -X GET API_RENDER
+            command: curl -X GET https://api.render.com/deploy/srv-cn2lrr821fec73e4ado0?key=yl8O7hCN0dA
 
 workflows:
   version: 2
