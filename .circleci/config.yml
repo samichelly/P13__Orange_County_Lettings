@@ -38,9 +38,9 @@ jobs:
           name: Build Docker image
           command: |
             docker build -t python-oc-lettings-fr-server .
-            docker tag python-oc-lettings-fr-server:latest samichelly/python-oc-lettings-fr-server:latest
+            docker tag python-oc-lettings-fr-server:latest $DOCKER_USER/python-oc-lettings-fr-server:latest
             docker login -u $DOCKER_USER -p $DOCKER_TOKEN
-            docker push samichelly/python-oc-lettings-fr-server:latest
+            docker push $DOCKER_USER/python-oc-lettings-fr-server:latest
 
   Deployment:
         docker:
