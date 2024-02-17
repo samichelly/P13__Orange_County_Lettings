@@ -1,0 +1,13 @@
+services:
+  - name: web
+    buildCommand: python manage.py collectstatic --no-input
+    env:
+      - key: DJANGO_SETTINGS_MODULE
+        value: "oc_lettings_site.settings"
+    routes:
+      - src: /static/
+        headers:
+          Cache-Control: "public, max-age=31536000"
+      # - src: /media/
+      #   headers:
+      #     Cache-Control: "public, max-age=31536000"

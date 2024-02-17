@@ -63,24 +63,8 @@ workflows:
       - containerize:
           requires:
             - build
-      #     filters:
-      #       branches:
-      #         only:
-      #           - master
       - deployment:
           requires:
             - build
             - containerize
-      #     filters:
-      #       branches:
-      #         only:
-      #           - master
-
-    # triggers:
-    #   - schedule:
-    #       cron: "* * * * *"
-    #       filters:
-    #         branches:
-    #           only:
-    #             - master
 
