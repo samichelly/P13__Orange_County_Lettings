@@ -145,6 +145,7 @@ sentry_sdk.init(
             cache_spans=False,
         ),
     ],
+    # environment="production",
     traces_sample_rate=1.0,
     profiles_sample_rate=1.0,
     # send_default_pii=True,
