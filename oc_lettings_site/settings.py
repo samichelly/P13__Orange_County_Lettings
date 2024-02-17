@@ -129,7 +129,7 @@ USE_TZ = True
 # STATIC_ROOT = os.path.join(BASE_DIR, "/root/project/staticfiles")
 STATIC_ROOT = "/staticfiles"
 
-STATIC_URL = "/staticfiles/"
+STATIC_URL = "/Python-OC-Lettings-FR/staticfiles/"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
