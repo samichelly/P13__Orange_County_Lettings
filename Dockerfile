@@ -11,7 +11,7 @@ WORKDIR /app
 COPY . .
 
 # Installation des dépendances Python
-RUN pip3 install -r requirements.txt
+RUN python3 -m pip install -r requirements.txt
 
 # Exposition du port 8000 pour Gunicorn (par défaut)
 EXPOSE 8000
