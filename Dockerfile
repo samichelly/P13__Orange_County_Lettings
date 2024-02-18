@@ -22,8 +22,20 @@ EXPOSE 8000
 # Configuration de NGINX pour servir les fichiers statiques et rediriger les requêtes vers Gunicorn
 COPY nginx/conf/nginx.conf /etc/nginx/conf/nginx.conf
 
-# Démarrage de Gunicorn et NGINX
-CMD ["nginx", "-g", "daemon off;"]
+
+# Copie du script de démarrage
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+
+# Autoriser l'exécution du script de démarrage
+RUN chmod +x /docker-entrypoint.sh
+
+# Commande par défaut pour exécuter le script de démarrage
+CMD ["/docker-entrypoint.sh"]
+
+
+# # Démarrage de Gunicorn et NGINX
+# CMD (gunicorn 'oc_lettings_site.wsgi' --bind=0.0.0.0:8000)
+# CMD ["nginx", "-g", "daemon off;"]
 
 
 
