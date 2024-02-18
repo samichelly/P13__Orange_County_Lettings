@@ -1,8 +1,11 @@
-# Utilisation de l'image de base avec Python et NGINX
-FROM nginx:latest
+# Utilisation de l'image de base avec Python
+FROM python:3.11.5 as base
+
+# Installation de NGINX
+RUN apt-get update && apt-get install -y nginx
 
 # Installation des dépendances Python
-RUN apt-get update && apt-get install -y python3 python3-pip
+RUN python3 -m pip install --upgrade pip
 
 # Création d'un répertoire de travail
 WORKDIR /app
@@ -11,7 +14,7 @@ WORKDIR /app
 COPY . .
 
 # Installation des dépendances Python
-RUN python3 -m pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
 # Exposition du port 8000 pour Gunicorn (par défaut)
 EXPOSE 8000
@@ -21,6 +24,7 @@ COPY nginx/conf/nginx.conf /etc/nginx/conf/nginx.conf
 
 # Démarrage de Gunicorn et NGINX
 CMD ["nginx", "-g", "daemon off;"]
+
 
 
 
