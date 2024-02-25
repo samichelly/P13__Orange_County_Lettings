@@ -97,9 +97,9 @@ COPY gunicorn_config.py /app
 COPY nginx/conf/nginx.conf /etc/nginx/conf/nginx.conf
 
 
-# AJOUT
-# Copie du script de démarrage
-COPY docker-entrypoint.sh /docker-entrypoint.sh
+# # AJOUT
+# # Copie du script de démarrage
+# COPY docker-entrypoint.sh /docker-entrypoint.sh
 
 
 # Copy the source code into the container.
@@ -108,12 +108,12 @@ COPY . .
 # Expose the port that the application listens on.
 EXPOSE 8000
 
-# # Run the application.
-# CMD (gunicorn 'oc_lettings_site.wsgi' --bind=0.0.0.0:8000)
+# Run the application.
+CMD (gunicorn 'oc_lettings_site.wsgi' --bind=0.0.0.0:8000)
 
 
-# AJOUT
-# Autoriser l'exécution du script de démarrage
-RUN chmod +x /docker-entrypoint.sh
-# Commande par défaut pour exécuter le script de démarrage
-CMD ["/docker-entrypoint.sh"]
+# # AJOUT
+# # Autoriser l'exécution du script de démarrage
+# RUN chmod +x /docker-entrypoint.sh
+# # Commande par défaut pour exécuter le script de démarrage
+# CMD ["/docker-entrypoint.sh"]
