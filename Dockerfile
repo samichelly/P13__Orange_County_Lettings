@@ -1,4 +1,4 @@
-Utilisation de l'image de base avec Python
+# Utilisation de l'image de base avec Python
 FROM python:3.11.5 as base
 
 # Installation de NGINX
