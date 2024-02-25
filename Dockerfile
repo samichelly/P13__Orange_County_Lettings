@@ -94,7 +94,7 @@ COPY gunicorn_config.py /app
 
 
 # AJOUT
-COPY nginx/conf/nginx.conf /etc/nginx/conf/nginx.conf
+COPY nginx/conf/nginx.conf /etc/nginx/nginx.conf
 
 
 # # AJOUT
