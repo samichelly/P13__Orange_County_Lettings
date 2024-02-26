@@ -25,7 +25,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "p13-ocl-render.onrender.com",
+    ".p13-ocl-render.onrender.com",
     "0.0.0.0",
 ]
 
@@ -137,8 +137,8 @@ STATICFILES_DIRS = [
 
 # Sentry init
 sentry_sdk.init(
-    # dsn=SENTRY_DSN,
-    dsn="https://6fe579278b0124ad6cd5b6f6027ebfa0@o4506610879954944.ingest.sentry.io/4506666483187712",
+    dsn=SENTRY_DSN,
+    # dsn="https://6fe579278b0124ad6cd5b6f6027ebfa0@o4506610879954944.ingest.sentry.io/4506666483187712",
     integrations=[
         DjangoIntegration(
             transaction_style="url",
