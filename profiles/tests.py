@@ -30,7 +30,8 @@ class ProfilesTest(TestCase):
         """
         Test the status code and content of the profiles index page.
 
-        Asserts that the response status code is 200 and contains the expected title for the profiles index page.
+        Asserts that the response status code is 200 and contains the expected title
+        for the profiles index page.
         """
         response = self.client.get(reverse("profiles:index"))
         self.assertEqual(response.status_code, 200)
@@ -40,7 +41,8 @@ class ProfilesTest(TestCase):
         """
         Test the status code and content of the profile detail page.
 
-        Asserts that the response status code is 200 and contains the expected title for the profile detail page.
+        Asserts that the response status code is 200 and contains the expected title
+        for the profile detail page.
         """
         response = self.client.get(reverse("profiles:profile", args=["TestUser"]))
         self.assertEqual(response.status_code, 200)
