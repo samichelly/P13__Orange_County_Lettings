@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Démarrer Gunicorn
+# Run Gunicorn
 gunicorn 'oc_lettings_site.wsgi' --bind=0.0.0.0:8000 &
 
-# Démarrer NGINX en mode non démon
+# Run NGINX
 nginx -g "daemon off;"
