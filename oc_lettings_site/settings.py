@@ -25,7 +25,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    ".p13-ocl-render.onrender.com",
+    "p13-ocl-render.onrender.com",
     "0.0.0.0",
 ]
 
@@ -127,7 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 # STATIC_ROOT = os.path.join(BASE_DIR, "/staticfiles")
-STATIC_ROOT = "/p13-ocl-render.onrender.com/static"
+STATIC_ROOT = "/static"
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [

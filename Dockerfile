@@ -20,7 +20,7 @@ RUN pip install -r requirements.txt
 EXPOSE 8000
 
 # Configuration de NGINX pour servir les fichiers statiques et rediriger les requêtes vers Gunicorn
-COPY nginx/conf/nginx.conf /etc/nginx/conf/nginx.conf
+COPY nginx/conf/nginx.conf /etc/nginx/nginx.conf
 
 
 # Copie du script de démarrage
