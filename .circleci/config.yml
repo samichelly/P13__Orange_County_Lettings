@@ -22,7 +22,7 @@ jobs:
 
       - run:
           name: Linting
-          command: flake8
+          command: flake8 profiles lettings oc_lettings_site
 
       - run:
           name: Run tests
