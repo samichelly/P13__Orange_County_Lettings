@@ -126,19 +126,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-# STATIC_ROOT = os.path.join(BASE_DIR, "/staticfiles")
 STATIC_ROOT = "/static"
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-    # BASE_DIR / "staticfiles",
 ]
+
 
 # Sentry init
 sentry_sdk.init(
     dsn=SENTRY_DSN,
-    # dsn="https://6fe579278b0124ad6cd5b6f6027ebfa0@o4506610879954944.ingest.sentry.io/4506666483187712",
     integrations=[
         DjangoIntegration(
             transaction_style="url",
@@ -147,7 +145,6 @@ sentry_sdk.init(
             cache_spans=False,
         ),
     ],
-    # environment="production",
     traces_sample_rate=1.0,
     profiles_sample_rate=1.0,
     # send_default_pii=True,
