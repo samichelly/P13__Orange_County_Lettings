@@ -75,7 +75,7 @@ workflows:
         #       branches:
         #         only:
         #           - master
-      filters:
+      push:
         branches:
           only:
             - master
