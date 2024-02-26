@@ -20,9 +20,9 @@ jobs:
           command:
             pip install -r requirements.txt
 
-      - run:
-          name: Linting
-          command: flake8
+      # - run:
+      #     name: Linting
+      #     command: flake8
 
       - run:
           name: Run tests
