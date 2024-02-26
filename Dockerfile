@@ -1,6 +1,15 @@
 # Utilisation de l'image de base avec Python
 FROM python:3.11.5 as base
 
+RUN adduser \
+    --disabled-password \
+    --gecos "" \
+    --home "/" \
+    --shell "/sbin/nologin" \
+    --no-create-home \
+    --uid "${UID}" \
+    appuser
+
 # Installation de NGINX
 RUN apt-get update && apt-get install -y nginx
 
@@ -15,6 +24,9 @@ COPY . .
 
 # Installation des dépendances Python
 RUN pip install -r requirements.txt
+# RUN --mount=type=cache,target=/root/.cache/pip \
+#     --mount=type=bind,source=requirements.txt,target=requirements.txt \
+#     python -m pip install -r requirements.txt
 
 # Exposition du port 8000 pour Gunicorn (par défaut)
 EXPOSE 8000
@@ -22,20 +34,12 @@ EXPOSE 8000
 # Configuration de NGINX pour servir les fichiers statiques et rediriger les requêtes vers Gunicorn
 COPY nginx/conf/nginx.conf /etc/nginx/nginx.conf
 
-
-# Copie du script de démarrage
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
-# Autoriser l'exécution du script de démarrage
 RUN chmod +x /docker-entrypoint.sh
 
-# Commande par défaut pour exécuter le script de démarrage
 CMD ["/docker-entrypoint.sh"]
 
-
-# # Démarrage de Gunicorn et NGINX
-# CMD (gunicorn 'oc_lettings_site.wsgi' --bind=0.0.0.0:8000)
-# CMD ["nginx", "-g", "daemon off;"]
 
 
 
