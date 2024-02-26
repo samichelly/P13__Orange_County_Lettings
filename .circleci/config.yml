@@ -69,14 +69,14 @@ workflows:
             - containerize
       
     triggers:
-        # - schedule:
-        #     # cron: "* * * * *"
-        #     filters:
-        #       branches:
-        #         only:
-        #           - master
-      push:
-        branches:
-          only:
-            - master
+      - schedule:
+          cron: "* * * * *"
+          filters:
+            branches:
+              only:
+                - master
+      # push:
+      #   branches:
+      #     only:
+      #       - master
 
