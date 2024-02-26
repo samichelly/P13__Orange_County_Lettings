@@ -1,14 +1,14 @@
 # Utilisation de l'image de base avec Python
 FROM python:3.11.5 as base
 
-RUN adduser \
-    --disabled-password \
-    --gecos "" \
-    --home "/" \
-    --shell "/sbin/nologin" \
-    --no-create-home \
-    --uid "${UID}" \
-    appuser
+# RUN adduser \
+#     --disabled-password \
+#     --gecos "" \
+#     --home "/" \
+#     --shell "/sbin/nologin" \
+#     --no-create-home \
+#     --uid "${UID}" \
+#     appuser
 
 # Installation de NGINX
 RUN apt-get update && apt-get install -y nginx
@@ -23,10 +23,10 @@ WORKDIR /app
 COPY . .
 
 # Installation des dépendances Python
-RUN pip install -r requirements.txt
-# RUN --mount=type=cache,target=/root/.cache/pip \
-#     --mount=type=bind,source=requirements.txt,target=requirements.txt \
-#     python -m pip install -r requirements.txt
+# RUN pip install -r requirements.txt
+RUN --mount=type=cache,target=/root/.cache/pip \
+    --mount=type=bind,source=requirements.txt,target=requirements.txt \
+    python -m pip install -r requirements.txt
 
 # Exposition du port 8000 pour Gunicorn (par défaut)
 EXPOSE 8000
