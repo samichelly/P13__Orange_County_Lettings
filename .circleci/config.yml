@@ -68,15 +68,15 @@ workflows:
             - build
             - containerize
       
-    # triggers:
+    triggers:
     #   - schedule:
     #       cron: "* * * * *"
     #       filters:
     #         branches:
     #           only:
     #             - master
-      # push:
-      #   branches:
-      #     only:
-      #       - master
+      push:
+        branches:
+          only:
+            - master
 
