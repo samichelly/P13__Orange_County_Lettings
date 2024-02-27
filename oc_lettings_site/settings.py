@@ -8,6 +8,7 @@ from pathlib import Path
 
 
 SENTRY_DSN = config("SENTRY_DSN", default="")
+KEY_SECRET = config("KEY_SECRET", default="")
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -17,7 +18,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"
+# SECRET_KEY = "fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"
+SECRET_KEY = KEY_SECRET
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
