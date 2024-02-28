@@ -1,0 +1,152 @@
+.. P13_OCL documentation master file, created by
+   sphinx-quickstart on Tue Feb 27 16:00:39 2024.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to P13_OCL's documentation!
+===================================
+
+===========
+Description
+===========
+This project is a website to manage the activities of Orange Country Lettings.
+
+============
+Installation
+============
+Make sure you have Python installed on your machine.
+
+Create and activate a virtual environment with the following commands:
+
+For Linux and Mac :
+
+   ``python -m venv venv``
+
+   ``source venv/bin/activate``
+
+   ``pip install -r requirements.txt``
+
+For Windows :
+
+   ``python -m venv venv``
+
+   ``venv\Scripts\activate``
+
+   ``pip install -r requirements.txt``
+
+.. Configure environment variables in an .env file or via environment variables for the following values:
+
+.. DNS_SENTRY
+
+.. SECRET_KEY
+
+===========
+Quickstart
+===========
+
+**Test Environment**
+
+Set ``DEBUG = True`` dans settings.py
+
+   ``python manage.py runserver``
+
+Go to http://127.0.0.1:8000/
+
+**Docker Local Environment**
+
+Set ``DEBUG = False`` dans settings.py
+
+   ``docker build -t [image Docker name] .``
+
+   ``docker run -d -p 8000:8000 -p 8080:80 --name [container Docker name] [image Docker name]``
+
+**Production Environment**
+
+
+======================================
+Technologies and Programming languages
+======================================
+Python==3.11.5
+
+Django==5.0.1
+
+gunicorn==21.2.0
+
+nginx==1.24.0
+
+sentry-sdk==1.40.0
+
+
+*Services*
+   Docker
+
+   CircleCI
+
+   Render
+
+   Sentry
+
+===================
+Models and Database
+===================
+Database : SQLite3
+
+**Class Address**
+
+Fields:
+    - number: PositiveIntegerField, representing the street number.
+    - street: CharField, representing the street name.
+    - city: CharField, representing the city name.
+    - state: CharField, representing the state abbreviation.
+    - zip_code: PositiveIntegerField, representing the ZIP code.
+    - country_iso_code: CharField, representing the ISO code of the country.
+
+
+**Class Lettings**
+
+Fields:
+    - title: CharField, representing the title of the letting.
+    - address: OneToOneField, representing the address associated with the letting.
+
+
+**Class Profiles**
+
+Fields:
+    - user: OneToOneField, representing the associated user.
+    - favorite_city: CharField, representing the user's favorite city.
+
+
+======================
+Interfaces Description
+======================
+
+========
+Tutorial
+========
+
+===========
+Deployement
+===========
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+
+
+.. Indices and tables
+.. ==================
+
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
+.. * :ref:`description`
+.. * :ref:`installation`
+.. * :ref:`Quickstart`
+.. * :ref:`Technologies and Programming languages`
+.. * :ref:`Models and Database`
+.. * :ref:`Interfaces Description`
+.. * :ref:`Tutorial`
+.. * :ref:`Deployement`
+.. * :ref:`Deployement-test`
