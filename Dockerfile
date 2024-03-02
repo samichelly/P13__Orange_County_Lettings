@@ -8,6 +8,11 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
+COPY .env/ .
+
+ARG SECRET_KEY
+ENV SECRET_KEY=${SECRET_KEY}
+
 EXPOSE 8000
 
 COPY nginx/conf/nginx.conf /etc/nginx/nginx.conf

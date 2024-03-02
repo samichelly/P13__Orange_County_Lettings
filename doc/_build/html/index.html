@@ -34,25 +34,40 @@
 <h1>Welcome to P13_OCL’s documentation!<a class="headerlink" href="#welcome-to-p13-ocl-s-documentation" title="Link to this heading">¶</a></h1>
 <section id="description">
 <h2>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h2>
-<p>This project is a website to manage the activities of Oranges Country Lettings.</p>
+<p>This project is a website to manage the activities of Orange Country Lettings.</p>
 </section>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
 <p>Make sure you have Python installed on your machine.</p>
 <p>Create and activate a virtual environment with the following commands:</p>
-<dl>
-<dt>For Linux and Mac :</dt><dd><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">venv</span></code></p>
+<p>For Linux and Mac :</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">venv</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">venv/bin/activate</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code></p>
-</dd>
-<dt>For Windows :</dt><dd><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">venv</span></code></p>
+</div></blockquote>
+<p>For Windows :</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">venv</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">venv\Scripts\activate</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code></p>
-</dd>
-</dl>
+</div></blockquote>
 </section>
 <section id="quickstart">
 <h2>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading">¶</a></h2>
+<p><strong>Test Environment</strong></p>
+<p>Set <code class="docutils literal notranslate"><span class="pre">DEBUG</span> <span class="pre">=</span> <span class="pre">True</span></code> dans settings.py</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span></code></p>
+</div></blockquote>
+<p>Go to <a class="reference external" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
+<p><strong>Docker Local Environment</strong></p>
+<p>Set <code class="docutils literal notranslate"><span class="pre">DEBUG</span> <span class="pre">=</span> <span class="pre">False</span></code> dans settings.py</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span> <span class="pre">-t</span> <span class="pre">[image</span> <span class="pre">Docker</span> <span class="pre">name]</span> <span class="pre">.</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-d</span> <span class="pre">-p</span> <span class="pre">8000:8000</span> <span class="pre">-p</span> <span class="pre">8080:80</span> <span class="pre">--name</span> <span class="pre">[container</span> <span class="pre">Docker</span> <span class="pre">name]</span> <span class="pre">[image</span> <span class="pre">Docker</span> <span class="pre">name]</span></code></p>
+</div></blockquote>
+<p><strong>Production Environment</strong></p>
 </section>
 <section id="technologies-and-programming-languages">
 <h2>Technologies and Programming languages<a class="headerlink" href="#technologies-and-programming-languages" title="Link to this heading">¶</a></h2>
@@ -65,11 +80,13 @@
 <dt><em>Services</em></dt><dd><p>Docker</p>
 <p>CircleCI</p>
 <p>Render</p>
+<p>Sentry</p>
 </dd>
 </dl>
 </section>
 <section id="models-and-database">
 <h2>Models and Database<a class="headerlink" href="#models-and-database" title="Link to this heading">¶</a></h2>
+<p>Database : SQLite3</p>
 <p><strong>Class Address</strong></p>
 <dl class="simple">
 <dt>Fields:</dt><dd><ul class="simple">

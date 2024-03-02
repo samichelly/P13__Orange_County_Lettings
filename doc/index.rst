@@ -6,6 +6,13 @@
 Welcome to P13_OCL's documentation!
 ===================================
 
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Contents:
+
+
+
 ===========
 Description
 ===========
@@ -127,12 +134,6 @@ Tutorial
 ===========
 Deployement
 ===========
-
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
 
 
 .. Indices and tables
