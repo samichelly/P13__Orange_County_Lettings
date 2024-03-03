@@ -6,10 +6,6 @@ from decouple import config
 
 from pathlib import Path
 
-
-SENTRY_DSN = config("SENTRY_DSN", default="")
-SECRET_KEY = config("SECRET_KEY", default="")
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -18,8 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = "fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"
-# SECRET_KEY = KEY_SECRET
+SECRET_KEY = config("SECRET_KEY", default="")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -138,7 +133,7 @@ STATICFILES_DIRS = [
 
 # Sentry init
 sentry_sdk.init(
-    dsn=SENTRY_DSN,
+    dsn=config("SENTRY_DSN", default=""),
     integrations=[
         DjangoIntegration(
             transaction_style="url",
@@ -149,5 +144,4 @@ sentry_sdk.init(
     ],
     traces_sample_rate=1.0,
     profiles_sample_rate=1.0,
-    # send_default_pii=True,
 )
