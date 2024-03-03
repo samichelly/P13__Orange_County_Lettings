@@ -8,8 +8,6 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-COPY .env/ .
-
 # ARG SECRET_KEY=["insert_your_SECRET_KEY"]
 # ENV SECRET_KEY=${SECRET_KEY}
 
