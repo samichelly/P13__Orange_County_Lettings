@@ -173,10 +173,6 @@ To use these views, refer to the appropriate URLs.
 - /lettings/<int:letting_id>/: Corresponds to the letting view.
 
 
-========
-Tutorial
-========
-
 ===========
 Deployement
 ===========
@@ -210,5 +206,6 @@ Deployment with Render
 ----------------------
 
 Deploy the last commit
+
 When the site is live, go to https://p13-ocl-render.onrender.com
 
