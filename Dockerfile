@@ -10,8 +10,11 @@ RUN pip install -r requirements.txt
 
 COPY .env/ .
 
-ARG SECRET_KEY
-ENV SECRET_KEY=${SECRET_KEY}
+# ARG SECRET_KEY=["insert_your_SECRET_KEY"]
+# ENV SECRET_KEY=${SECRET_KEY}
+
+# ARG SENTRY_DSN=["insert_your_SENTRY_DSN"]
+# ENV SENTRY_DSN=${SENTRY_DSN}
 
 EXPOSE 8000
 
