@@ -8,10 +8,10 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-# ARG SECRET_KEY=["insert_your_SECRET_KEY"]
+# ARG SECRET_KEY="fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"
 # ENV SECRET_KEY=${SECRET_KEY}
 
-# ARG SENTRY_DSN=["insert_your_SENTRY_DSN"]
+# ARG SENTRY_DSN="https://6fe579278b0124ad6cd5b6f6027ebfa0@o4506610879954944.ingest.sentry.io/4506666483187712"
 # ENV SENTRY_DSN=${SENTRY_DSN}
 
 EXPOSE 8000
