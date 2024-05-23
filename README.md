@@ -15,6 +15,7 @@ Orange County Lettings is a web application designed for managing rental listing
   - [Unit Tests](#unit-tests)
   - [Database](#database)
   - [Admin Panel](#admin-panel)
+- [Complete doc using Docker](#complete-doc-using-docker)
 
 ## Development Local
 
@@ -91,7 +92,7 @@ In the rest of the local development documentation, it is assumed that the `pyth
   ```bash
   python manage.py runserver
   ```
-- Open `http://localhost:8000` in a browser.
+- Go to this [page](http://localhost:8000) in a browser.
 - Confirm that the site works and you can navigate (you should see several profiles and locations).
 
 ### Linting
@@ -157,7 +158,10 @@ In the rest of the local development documentation, it is assumed that the `pyth
 
 ### Admin Panel
 
-- Open `http://localhost:8000/admin` in a browser.
+- Got to this [page](http://localhost:8000/admin) in a browser.
 - Log in with the following credentials:
   - Username: `admin`
   - Password: `Abc1234!`
+ 
+## Complete doc using Docker
+Go to this [page](https://p13-ocl.readthedocs.io/en/latest/)
