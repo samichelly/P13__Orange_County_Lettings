@@ -8,15 +8,13 @@ Orange County Lettings is a web application designed for managing rental listing
 
 - [Development Local](#development-local)
   - [Prerequisites](#prerequisites)
-  - [macOS / Linux](#macos--linux)
-    - [Cloning the Repository](#cloning-the-repository)
-    - [Creating the Virtual Environment](#creating-the-virtual-environment)
-    - [Running the Site](#running-the-site)
-    - [Linting](#linting)
-    - [Unit Tests](#unit-tests)
-    - [Database](#database)
-    - [Admin Panel](#admin-panel)
-  - [Windows](#windows)
+  - [Cloning the Repository](#cloning-the-repository)
+  - [Creating the Virtual Environment](#creating-the-virtual-environment)
+  - [Running the Site](#running-the-site)
+  - [Linting](#linting)
+  - [Unit Tests](#unit-tests)
+  - [Database](#database)
+  - [Admin Panel](#admin-panel)
 
 ## Development Local
 
@@ -29,9 +27,7 @@ Orange County Lettings is a web application designed for managing rental listing
 
 In the rest of the local development documentation, it is assumed that the `python` command in your OS shell runs the above Python interpreter (unless a virtual environment is activated).
 
-### macOS / Linux
-
-#### Cloning the Repository
+### Cloning the Repository
 
 - Navigate to the desired directory:
   ```bash
@@ -42,7 +38,7 @@ In the rest of the local development documentation, it is assumed that the `pyth
   git clone https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR.git
   ```
 
-#### Creating the Virtual Environment
+### Creating the Virtual Environment
 
 - Navigate to the project directory:
   ```bash
@@ -77,7 +73,7 @@ In the rest of the local development documentation, it is assumed that the `pyth
   deactivate
   ```
 
-#### Running the Site
+### Running the Site
 
 - Navigate to the project directory:
   ```bash
@@ -98,7 +94,7 @@ In the rest of the local development documentation, it is assumed that the `pyth
 - Open `http://localhost:8000` in a browser.
 - Confirm that the site works and you can navigate (you should see several profiles and locations).
 
-#### Linting
+### Linting
 
 - Navigate to the project directory:
   ```bash
@@ -113,7 +109,7 @@ In the rest of the local development documentation, it is assumed that the `pyth
   flake8
   ```
 
-#### Unit Tests
+### Unit Tests
 
 - Navigate to the project directory:
   ```bash
@@ -128,7 +124,7 @@ In the rest of the local development documentation, it is assumed that the `pyth
   pytest
   ```
 
-#### Database
+### Database
 
 - Navigate to the project directory:
   ```bash
@@ -159,22 +155,9 @@ In the rest of the local development documentation, it is assumed that the `pyth
   .quit
   ```
 
-#### Admin Panel
+### Admin Panel
 
 - Open `http://localhost:8000/admin` in a browser.
 - Log in with the following credentials:
   - Username: `admin`
   - Password: `Abc1234!`
-
-### Windows
-
-Using PowerShell, follow the same steps as above with the following modifications:
-
-- To activate the virtual environment:
-  ```powershell
-  .\venv\Scripts\Activate.ps1
-  ```
-- Replace `which <my-command>` with:
-  ```powershell
-  (Get-Command <my-command>).Path
-  ```
