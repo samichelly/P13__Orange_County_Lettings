@@ -1,77 +1,180 @@
-## Résumé
+# PROJECT_13__OC_Lettings
 
-Site web d'Orange County Lettings
+## Project Description
 
-## Développement local
+Orange County Lettings is a web application designed for managing rental listings and profiles. This project provides a platform where users can view various profiles and rental locations.
 
-### Prérequis
+## Table of Contents
 
-- Compte GitHub avec accès en lecture à ce repository
+- [Development Local](#development-local)
+  - [Prerequisites](#prerequisites)
+  - [macOS / Linux](#macos--linux)
+    - [Cloning the Repository](#cloning-the-repository)
+    - [Creating the Virtual Environment](#creating-the-virtual-environment)
+    - [Running the Site](#running-the-site)
+    - [Linting](#linting)
+    - [Unit Tests](#unit-tests)
+    - [Database](#database)
+    - [Admin Panel](#admin-panel)
+  - [Windows](#windows)
+
+## Development Local
+
+### Prerequisites
+
+- GitHub account with read access to this repository
 - Git CLI
 - SQLite3 CLI
-- Interpréteur Python, version 3.6 ou supérieure
+- Python interpreter, version 3.6 or higher
 
-Dans le reste de la documentation sur le développement local, il est supposé que la commande `python` de votre OS shell exécute l'interpréteur Python ci-dessus (à moins qu'un environnement virtuel ne soit activé).
+In the rest of the local development documentation, it is assumed that the `python` command in your OS shell runs the above Python interpreter (unless a virtual environment is activated).
 
 ### macOS / Linux
 
-#### Cloner le repository
+#### Cloning the Repository
 
-- `cd /path/to/put/project/in`
-- `git clone https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR.git`
+- Navigate to the desired directory:
+  ```bash
+  cd /path/to/put/project/in
+  ```
+- Clone the repository:
+  ```bash
+  git clone https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR.git
+  ```
 
-#### Créer l'environnement virtuel
+#### Creating the Virtual Environment
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `python -m venv venv`
-- `apt-get install python3-venv` (Si l'étape précédente comporte des erreurs avec un paquet non trouvé sur Ubuntu)
-- Activer l'environnement `source venv/bin/activate`
-- Confirmer que la commande `python` exécute l'interpréteur Python dans l'environnement virtuel
-`which python`
-- Confirmer que la version de l'interpréteur Python est la version 3.6 ou supérieure `python --version`
-- Confirmer que la commande `pip` exécute l'exécutable pip dans l'environnement virtuel, `which pip`
-- Pour désactiver l'environnement, `deactivate`
+- Navigate to the project directory:
+  ```bash
+  cd /path/to/Python-OC-Lettings-FR
+  ```
+- Create a virtual environment:
+  ```bash
+  python -m venv venv
+  ```
+- (If the previous step gives errors about a missing package on Ubuntu, run:)
+  ```bash
+  apt-get install python3-venv
+  ```
+- Activate the virtual environment:
+  ```bash
+  source venv/bin/activate
+  ```
+- Confirm that the `python` command runs the Python interpreter in the virtual environment:
+  ```bash
+  which python
+  ```
+- Confirm that the Python interpreter version is 3.6 or higher:
+  ```bash
+  python --version
+  ```
+- Confirm that the `pip` command runs the pip executable in the virtual environment:
+  ```bash
+  which pip
+  ```
+- To deactivate the virtual environment, run:
+  ```bash
+  deactivate
+  ```
 
-#### Exécuter le site
+#### Running the Site
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
-- `pip install --requirement requirements.txt`
-- `python manage.py runserver`
-- Aller sur `http://localhost:8000` dans un navigateur.
-- Confirmer que le site fonctionne et qu'il est possible de naviguer (vous devriez voir plusieurs profils et locations).
+- Navigate to the project directory:
+  ```bash
+  cd /path/to/Python-OC-Lettings-FR
+  ```
+- Activate the virtual environment:
+  ```bash
+  source venv/bin/activate
+  ```
+- Install the required packages:
+  ```bash
+  pip install --requirement requirements.txt
+  ```
+- Run the Django development server:
+  ```bash
+  python manage.py runserver
+  ```
+- Open `http://localhost:8000` in a browser.
+- Confirm that the site works and you can navigate (you should see several profiles and locations).
 
 #### Linting
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
-- `flake8`
+- Navigate to the project directory:
+  ```bash
+  cd /path/to/Python-OC-Lettings-FR
+  ```
+- Activate the virtual environment:
+  ```bash
+  source venv/bin/activate
+  ```
+- Run flake8:
+  ```bash
+  flake8
+  ```
 
-#### Tests unitaires
+#### Unit Tests
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
-- `pytest`
+- Navigate to the project directory:
+  ```bash
+  cd /path/to/Python-OC-Lettings-FR
+  ```
+- Activate the virtual environment:
+  ```bash
+  source venv/bin/activate
+  ```
+- Run pytest:
+  ```bash
+  pytest
+  ```
 
-#### Base de données
+#### Database
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- Ouvrir une session shell `sqlite3`
-- Se connecter à la base de données `.open oc-lettings-site.sqlite3`
-- Afficher les tables dans la base de données `.tables`
-- Afficher les colonnes dans le tableau des profils, `pragma table_info(Python-OC-Lettings-FR_profile);`
-- Lancer une requête sur la table des profils, `select user_id, favorite_city from
-  Python-OC-Lettings-FR_profile where favorite_city like 'B%';`
-- `.quit` pour quitter
+- Navigate to the project directory:
+  ```bash
+  cd /path/to/Python-OC-Lettings-FR
+  ```
+- Open a SQLite3 shell:
+  ```bash
+  sqlite3
+  ```
+- Connect to the database:
+  ```sqlite
+  .open oc-lettings-site.sqlite3
+  ```
+- List the tables in the database:
+  ```sqlite
+  .tables
+  ```
+- Show the columns in the profiles table:
+  ```sqlite
+  pragma table_info(Python-OC-Lettings-FR_profile);
+  ```
+- Query the profiles table:
+  ```sqlite
+  select user_id, favorite_city from Python-OC-Lettings-FR_profile where favorite_city like 'B%';
+  ```
+- Quit SQLite3:
+  ```sqlite
+  .quit
+  ```
 
-#### Panel d'administration
+#### Admin Panel
 
-- Aller sur `http://localhost:8000/admin`
-- Connectez-vous avec l'utilisateur `admin`, mot de passe `Abc1234!`
+- Open `http://localhost:8000/admin` in a browser.
+- Log in with the following credentials:
+  - Username: `admin`
+  - Password: `Abc1234!`
 
 ### Windows
 
-Utilisation de PowerShell, comme ci-dessus sauf :
+Using PowerShell, follow the same steps as above with the following modifications:
 
-- Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
-- Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
+- To activate the virtual environment:
+  ```powershell
+  .\venv\Scripts\Activate.ps1
+  ```
+- Replace `which <my-command>` with:
+  ```powershell
+  (Get-Command <my-command>).Path
+  ```
